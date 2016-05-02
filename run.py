@@ -37,18 +37,20 @@ def start():
 
     user = config["user"]
     password = config["pass"]
+    sub = config["sub"]
 
     reddit = praw.Reddit(user_agent="For use with /r/truedota2.")
 
     reddit.login(user, password, disable_warning=True)
 
     while True:
-        subreddit = reddit.get_subreddit("mudbotdev")  # To be changed later
+        subreddit = reddit.get_subreddit(sub)
         for submission in subreddit.get_new(limit=100):  # 100? Maybe change
             comments = submission.comments
             for comment in comments:
                 check_comment(comment)
 
+        # Wait 5 seconds before looping
         time.sleep(5)
 
 
