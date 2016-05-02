@@ -1,2 +1,4 @@
 config.yml
+*.pyc
+td2tasks/*.pyc
 

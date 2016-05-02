@@ -1,7 +1,6 @@
-import os
 import praw
-import requests
 import time
+import td2tasks
 import yaml
 
 user = ""
@@ -11,7 +10,7 @@ password = ""
 def has_replied(comment):
     """Return True if truedota2bot has already replied to this comment."""
     for reply in comment.replies:
-        if comment.author.name == user:
+        if reply.author.name == user:
             return True
 
     return False
@@ -21,7 +20,10 @@ def check_comment(comment):
     """Recursively check a comment and its replies."""
     if comment.body.startswith("!test"):
         if not has_replied(comment):
-            comment.reply("Yeah!")
+            td2tasks.test.run(comment)
+
+    for reply in comment.replies:
+        check_comment(reply)
 
 
 def start():
