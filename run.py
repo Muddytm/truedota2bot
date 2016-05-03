@@ -18,7 +18,7 @@ def has_replied(comment):
 
 def check_comment(comment):
     """Recursively check a comment and its replies."""
-    if comment.body.startswith("!test"):
+    if comment.body.strip().startswith("!test"):
         if not has_replied(comment):
             td2tasks.test.run(comment)
 
@@ -45,13 +45,15 @@ def start():
 
     while True:
         subreddit = reddit.get_subreddit(sub)
-        for submission in subreddit.get_new(limit=100):  # 100? Maybe change
+        for submission in subreddit.get_new(limit=20):  # Arbitrary
+            #if not submission.link_flair_text:
+            #    td2tasks.flair.run(submission)
             comments = submission.comments
             for comment in comments:
                 check_comment(comment)
 
         # Wait 5 seconds before looping
-        time.sleep(5)
+        # time.sleep(5)
 
 
 if __name__ == "__main__":
