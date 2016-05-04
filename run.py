@@ -22,6 +22,10 @@ def check_comment(comment):
         if not has_replied(comment):
             td2tasks.test.run(comment)
 
+    if comment.body.strip().startswith("!patchnotes"):
+        if not has_replied(comment):
+            td2tasks.patchnotes.run(comment)
+
     for reply in comment.replies:
         check_comment(reply)
 

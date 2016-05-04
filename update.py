@@ -170,9 +170,9 @@ def update_patch(patch):
         if not heroitem:
             break
 
-    print json.dumps(notes)
+    #print json.dumps(notes)
 
-    with open("patch_notes.json", "w+") as file:
+    with open("td2tasks/patch_notes.json", "w+") as file:
         json.dump(notes, file)
 
 
