@@ -1,28 +1,71 @@
 from bs4 import BeautifulSoup
 import commands
+import json
 
 
-def update_patches():
-    """Update patches JSON.
+def update_patch(patch):
+    """Update patch JSON.
 
-    Parses data from http://dota2.gamepedia.com/Game_Versions.
+    Parses data from the URL of the newest patch. For this all to work as
+    intended, we assume that the patch note page source all share a similar
+    format.
     """
-    status, output = commands.getstatusoutput("curl -s http://dota2.gamepedia.com/Game_Versions")
+    status, output = commands.getstatusoutput("curl -s " + patch)
     soup = BeautifulSoup(output, "html.parser")
 
-    patches = {}
+    notes = {}
 
-    for link in soup.find_all("a"):
-        patch = str(link.get("href"))[1:]  # [1:] = Get rid of the "/"
-        #print patch
-        #if (len(str(patch)) < 6 and len(str(patch)) > 1 and
-        #        str(patch)[1] == "."):
-        #    break  # We now have the latest patch
+    body = soup.find("body")
+    div = body.find_next("div", id="Items")
+    newitems = div.find_next("div")
+    item = newitems.find_next("ul")
+
+    for i in output.split():
+        if i.startswith("[["):
+            name = i[2:][:-2].strip()
+        elif i.startswith("<strong>"):
+            name = i[8:][:-9].strip()
+        else:
+            continue
+        print name
+        notes[name] = []
+        for change in item.find_all("li"):
+            notes[name].append(change.text)
+
+        item = newitems.find_next("ul")
+
+        if not item:
+            break
+
+    #print json.dumps(notes)
+
+
+    # body = soup.find("body")
+    # div = body.find_next("div", id="Heroes")
+    # heroitem = div.find_next("ul")
+    #
+    # for i in output.split():
+    #     if not i.startswith("[["):
+    #         continue
+    #     name = i[2:][:-2]
+    #     notes[name] = []
+    #     print i
+    #     for change in heroitem.find_all("li"):
+    #         notes[name].append(change.text)
+    #         print change.text
+    #
+    #     heroitem = heroitem.find_next("ul")
+    #
+    #     if not heroitem:
+    #         div = body.find_next("div", id="Heroes")
+    #         heroitem = div.find_next("ul")
+
+    #print json.dumps(notes)
 
 
 def main():
     """Hub of updates for truedota2bot."""
-    update_patches()
+    update_patch("http://www.dota2.com/687")
 
 
 if __name__ == "__main__":

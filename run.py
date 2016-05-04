@@ -46,8 +46,6 @@ def start():
     while True:
         subreddit = reddit.get_subreddit(sub)
         for submission in subreddit.get_new(limit=20):  # Arbitrary
-            #if not submission.link_flair_text:
-            #    td2tasks.flair.run(submission)
             comments = submission.comments
             for comment in comments:
                 check_comment(comment)
