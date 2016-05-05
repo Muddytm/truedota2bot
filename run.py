@@ -54,9 +54,6 @@ def start():
             for comment in comments:
                 check_comment(comment)
 
-        # Wait 5 seconds before looping
-        # time.sleep(5)
-
 
 if __name__ == "__main__":
     start()

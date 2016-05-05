@@ -15,7 +15,7 @@ def run(comment):
         if name.lower().startswith(request.lower()):
             response += ("**" + name + ":**\n\n")
             for change in notes[name]:
-                response += (change + "\n\n")
+                response += ("- " + change + "\n\n")
             break
 
     if response != "":

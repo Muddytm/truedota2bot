@@ -52,6 +52,8 @@ def name_cleaner(name):
         return "Necrophos"
     elif name == "obsidian_destroyer":
         return "Outworld Devourer"
+    elif name == "queenofpain":
+        return "Queen of Pain"
     elif name == "nevermore":
         return "Shadow Fiend"
     elif name == "shredder":
@@ -110,6 +112,9 @@ def text_cleaner(text):
         if ":. " in text:
             text = text.replace(":. ", ": ")
             dirty = True
+        if "., " in text:
+            text = text.replace("., ", ", ")
+            dirty = True
 
         for index, char in enumerate(text):
             if (char == "." and index < (len(text) - 1)):
@@ -118,7 +123,7 @@ def text_cleaner(text):
                     text.insert(index + 1, " ")
                     text = "".join(text)
 
-    return text
+    return text.strip()
 
 
 def update_patch(patch):
@@ -135,7 +140,12 @@ def update_patch(patch):
 
     # I'm bad with BeautifulSoup, don't make fun of me please ._.
     body = soup.find("body")
-    div = body.find_next("div", id="Items")
+    if (output.find("id=\"Items\"") < output.find("id=\"Heroes\"")):
+        div = body.find_next("div", id="Items")
+    else:
+        div = body.find_next("div", id="Heroes")
+    #div = body.find_next("div", id="Items")
+    #div = body.find_next("div", id="Heroes")
     newitems = div.find_next("div")
     heroitem = newitems.find_next("ul")
 
@@ -162,6 +172,17 @@ def update_patch(patch):
         for change in heroitem.find_all("li"):
             text = text_cleaner(change.text)
             notes[name].append(text)
+            # BELOW: code that "sorta" gets subdetails. Buggy, but it exists
+            # no_detail = True
+            # for details in change.find_all("div"):
+            #     no_detail = False
+            #     for subdetails in details.find_all("p"):
+            #         text = text_cleaner(subdetails.text)
+            #         notes[name].append(text)
+            #
+            # if no_detail:
+            #     text = text_cleaner(change.text)
+            #     notes[name].append(text)
 
         # Get next hero or item
         heroitem = heroitem.find_next("ul")
