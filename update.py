@@ -144,8 +144,6 @@ def update_patch(patch):
         div = body.find_next("div", id="Items")
     else:
         div = body.find_next("div", id="Heroes")
-    #div = body.find_next("div", id="Items")
-    #div = body.find_next("div", id="Heroes")
     newitems = div.find_next("div")
     heroitem = newitems.find_next("ul")
 
@@ -191,15 +189,13 @@ def update_patch(patch):
         if not heroitem:
             break
 
-    #print json.dumps(notes)
-
     with open("td2tasks/patch_notes.json", "w+") as file:
         json.dump(notes, file)
 
 
 def main():
     """Hub of updates for truedota2bot."""
-    update_patch("http://www.dota2.com/687")
+    update_patch("http://www.dota2.com/687")  # Supported: 6.87, 6.85
 
 
 if __name__ == "__main__":

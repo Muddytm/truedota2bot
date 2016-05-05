@@ -1,10 +1,21 @@
 import praw
+import random
 import time
 import td2tasks
 import yaml
 
 user = ""
 password = ""
+jokes = ["Hoho, haha! ", "Zip! Zap! ", "Beep boop, ", "Meep merp, "]
+
+
+def send_reply(text, comment):
+    """Reply to a command."""
+    if text and text != "":
+        text += "\n\n--------\n\n"
+        joke = jokes[random.randint(0, len(jokes) - 1)]
+        text += "^(" + joke + "I'm a bot!) [^(Message me)](http://www.reddit.com/message/compose/?to=" + user + ") ^(if you have any suggestions or bugs to report, and) [^(check me out on Github)](https://github.com/Muddytm/truedota2bot) ^(if you like that sort of thing.)"
+        comment.reply(text)
 
 
 def has_replied(comment):
@@ -20,11 +31,11 @@ def check_comment(comment):
     """Recursively check a comment and its replies."""
     if comment.body.strip().startswith("!test"):
         if not has_replied(comment):
-            td2tasks.test.run(comment)
+            send_reply(td2tasks.test.run(comment), comment)
 
     if comment.body.strip().startswith("!patchnotes"):
         if not has_replied(comment):
-            td2tasks.patchnotes.run(comment)
+            send_reply(td2tasks.patchnotes.run(comment), comment)
 
     for reply in comment.replies:
         check_comment(reply)

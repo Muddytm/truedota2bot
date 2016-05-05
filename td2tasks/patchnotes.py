@@ -19,4 +19,4 @@ def run(comment):
             break
 
     if response != "":
-        comment.reply(response)
+        return response
