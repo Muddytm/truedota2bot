@@ -5,14 +5,9 @@ To run, you'll need the following installed and ready to go for Python:
 
 - PRAW (Python Reddit API Wrapper)
 - YAML (AKA: pyYAML - this is used to parse config.yml)
+- BeautifulSoup ("pip install beautifulsoup4" - used to parse patch notes pages for balance changes)
 
-I believe you can simply "pip install" both.
-
-Alternatively, they can both be found on GitHub:
-
-https://github.com/yaml/pyyaml
-
-https://github.com/praw-dev/praw
+You can simply "pip install" these packages.
 
 IMPORTANT: you'll need to setup config.yml for this to work.
 
