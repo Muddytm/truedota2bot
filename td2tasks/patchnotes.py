@@ -13,7 +13,8 @@ def run(comment):
 
     for name, age in notes.iteritems():
         if name.lower().startswith(request.lower()):
-            response += ("**" + name + ":**\n\n")
+            url_name = name.strip().replace(" ", "_")
+            response += ("[**" + name + "**](http://dota2.gamepedia.com/" + url_name + ") (6.87):\n\n")
             for change in notes[name]:
                 response += ("- " + change + "\n\n")
             break
