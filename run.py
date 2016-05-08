@@ -6,7 +6,7 @@ import yaml
 
 user = ""
 password = ""
-jokes = ["Hoho, haha! ", "Zip! Zap! ", "Beep boop, ", "Meep merp, "]
+jokes = ["Hoho, haha! ", "Zip! Zap! ", "Beep boop, ", "Meep merp, ", "Waow! "]
 
 
 def send_reply(text, comment):
