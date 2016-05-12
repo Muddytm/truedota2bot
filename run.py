@@ -21,7 +21,7 @@ def send_reply(text, comment):
 def has_replied(comment):
     """Return True if truedota2bot has already replied to this comment."""
     for reply in comment.replies:
-        if reply.author.name == user:
+        if reply.author.name.lower() == user.lower():
             return True
 
     return False
@@ -38,7 +38,10 @@ def check_comment(comment):
             send_reply(td2tasks.patchnotes.run(comment), comment)
 
     for reply in comment.replies:
-        check_comment(reply)
+        try:
+            check_comment(reply)
+        except AttributeError:
+            pass
 
 
 def start():
@@ -60,7 +63,8 @@ def start():
 
     while True:
         subreddit = reddit.get_subreddit(sub)
-        for submission in subreddit.get_new(limit=20):  # Arbitrary
+        for submission in subreddit.get_new(limit=50):  # Arbitrary
+            print submission.title
             comments = submission.comments
             for comment in comments:
                 check_comment(comment)

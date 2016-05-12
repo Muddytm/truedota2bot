@@ -195,7 +195,9 @@ def update_patch(patch):
 
 def main():
     """Hub of updates for truedota2bot."""
-    update_patch("http://www.dota2.com/687")  # Supported: 6.87, 6.85
+    print ("Running this will override patch_notes.json. Careful what you wish "
+           "for.")
+    #update_patch("http://www.dota2.com/687")  # Supported: 6.87, 6.85
 
 
 if __name__ == "__main__":
