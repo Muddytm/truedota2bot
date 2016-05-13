@@ -16,7 +16,11 @@ def run(comment):
     with open("td2tasks/patch_notes.json") as file:
         notes = json.load(file)
 
-    patch_number = request.split()[0].strip()
+    try:
+        patch_number = request.split()[0].strip()
+    except IndexError:
+        # No hero/item given
+        return
 
     changelog = None
 
