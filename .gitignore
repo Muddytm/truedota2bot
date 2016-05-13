@@ -1,5 +1,4 @@
 config.yml
 *.pyc
 td2tasks/*.pyc
-td2tasks/patch_notes.json
 

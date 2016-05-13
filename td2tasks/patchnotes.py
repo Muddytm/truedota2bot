@@ -21,33 +21,27 @@ def run(comment):
     changelog = None
 
     # Verify if a patch number was given and if data exists for it.
-    if (patch_number in patch_list and patch_number in notes):
+    if (patch_number in patch_list):
         request = request.replace(patch_number, "").strip()
-        for patch in patch_list:
-            if patch_number != patch:
-                continue
-            for heroitem, change in notes[patch].iteritems():
-                print heroitem
-                if sanitize(request) in sanitize(heroitem):
-                    request = heroitem
-                    break
-            if (patch in notes and request in notes[patch]):
-                changelog = notes[patch][request]
+
+        for heroitem, change in notes[patch_number].iteritems():
+            if sanitize(heroitem).startswith(sanitize(request)):
+                request = heroitem
                 break
-    else:
-        index = 0
-        done = False
-        for cur_patch in patch_list:
-            if done:
-                break
-            for heroitem, change in notes[cur_patch].iteritems():
-                if sanitize(request) in sanitize(heroitem):
-                    request = heroitem
-                    done = True
-                    break
-        print request
         if request in notes[patch_number]:
             changelog = notes[patch_number][request]
+    else:
+        done = False
+        for patch in patch_list:
+            if done:
+                break
+            for heroitem, change in notes[patch].iteritems():
+                if sanitize(heroitem).startswith(sanitize(request)):
+                    patch_number = patch
+                    request = heroitem
+                    changelog = notes[patch][request]
+                    done = True
+                    break
 
     if not changelog:
         return
@@ -60,3 +54,4 @@ def run(comment):
 
     if response != "":
         return response
+
