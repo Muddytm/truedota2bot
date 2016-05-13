@@ -24,6 +24,9 @@ def run(comment):
     if (patch_number in patch_list):
         request = request.replace(patch_number, "").strip()
 
+        if request == "":
+            return
+
         for heroitem, change in notes[patch_number].iteritems():
             if sanitize(heroitem).startswith(sanitize(request)):
                 request = heroitem
