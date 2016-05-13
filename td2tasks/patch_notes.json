@@ -52,6 +52,21 @@
       "Grave Chill cast range increased from 600 to 650"
     ]
   },
+  "6.87b": {
+    "Lich": [
+      "Sacrifice Cooldown increased from 44/36/28/20 to 60/50/40/30",
+      "Sacrifice Mana restore increased from 25/40/55/70% to 30/50/70/90%"
+    ],
+    "Blade Mail": [
+      "Blade Mail cooldown increased from 13 to 18"
+    ],
+    "Bounty Hunter": [
+      "Jinada slow reduced from 25/27/29/31% to 18/22/26/30%"
+    ],
+    "Armlet of Mordiggian": [
+      "Armlet's armor bonus is now granted after it is fully activated"
+    ]
+  },
   "6.87": {
     "Razor": [
       "Static Link break distance increased by 100"
@@ -594,4 +609,3 @@
     ]
   }
 }
-
