@@ -64,7 +64,6 @@ def start():
     while True:
         subreddit = reddit.get_subreddit(sub)
         for submission in subreddit.get_new(limit=50):  # Arbitrary
-            print submission.title
             comments = submission.comments
             for comment in comments:
                 check_comment(comment)
