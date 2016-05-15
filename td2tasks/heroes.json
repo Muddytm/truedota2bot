@@ -1469,11 +1469,6 @@
     "id": 107,
     "localized_name": "Earth Spirit"
   },
-  "Abyssal Underlord": {
-    "name": "abyssal_underlord",
-    "id": 108,
-    "localized_name": "Abyssal Underlord"
-  },
   "Terrorblade": {
     "carry": 3,
     "support": 0,
