@@ -10,6 +10,9 @@ def run(comment):
     """Get team composition and report with what the team is strongest in."""
     request = comment.body.strip().replace("!teamsummary", "").strip()
 
+    while request.endswith(","):
+        request = request[:-1].strip()
+
     with open("td2tasks/heroes.json") as file:
         data = json.load(file)
 
