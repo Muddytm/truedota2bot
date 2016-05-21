@@ -35,19 +35,20 @@ def run(comment):
             return
 
         for heroitem, change in notes[patch_number].iteritems():
-            if sanitize(request) in sanitize(heroitem):
+            if sanitize(heroitem).startswith(sanitize(request)):
                 request = heroitem
                 break
             else:
-                done = False
-                for word in sanitize(request).split():
-                    if (word in sanitize(heroitem) and word != "the" and
-                            word != "of"):
-                        request = heroitem
-                        done = True
-                        break
-                if done:
-                    break
+                pass
+                # done = False
+                # for word in sanitize(request).split():
+                #     if (word in sanitize(heroitem) and word != "the" and
+                #             word != "of"):
+                #         request = heroitem
+                #         done = True
+                #         break
+                # if done:
+                #     break
 
         if request in notes[patch_number]:
             changelog = notes[patch_number][request]
@@ -57,23 +58,24 @@ def run(comment):
             if done:
                 break
             for heroitem, change in notes[patch].iteritems():
-                if sanitize(request) in sanitize(heroitem):
+                if sanitize(heroitem).startswith(sanitize(request)):
                     patch_number = patch
                     request = heroitem
                     changelog = notes[patch][request]
                     done = True
                     break
                 else:
-                    for word in sanitize(request).split():
-                        if (word in sanitize(heroitem) and word != "the" and
-                                word != "of"):
-                            patch_number = patch
-                            request = heroitem
-                            changelog = notes[patch][request]
-                            done = True
-                            break
-                    if done:
-                        break
+                    pass
+                    # for word in sanitize(request).split():
+                    #     if (word in sanitize(heroitem) and word != "the" and
+                    #             word != "of"):
+                    #         patch_number = patch
+                    #         request = heroitem
+                    #         changelog = notes[patch][request]
+                    #         done = True
+                    #         break
+                    # if done:
+                    #     break
 
     if not changelog:
         return
