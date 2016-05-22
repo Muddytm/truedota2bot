@@ -9,7 +9,7 @@ def sanitize(text):
 def run(comment):
     """List recent changes of hero or item based on patch_notes.json."""
 
-    patch_list = ["6.87c", "6.87b", "6.87", "https://nicedotame.me"]
+    patch_list = ["6.87d", "6.87c", "6.87b", "6.87", "https://nicedotame.me"]
 
     request = comment.body.strip().replace("!patchnotes", "").strip()
 

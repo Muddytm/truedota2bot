@@ -21,6 +21,7 @@ def send_reply(text, comment):
 def has_replied(comment):
     """Return True if truedota2bot has already replied to this comment."""
     for reply in comment.replies:
+        time.sleep(1)
         if reply.author.name.lower() == user.lower():
             return True
 

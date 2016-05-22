@@ -1,4 +1,28 @@
 {
+  "6.87d": {
+    "Doom": [
+      "Doom cooldown increased from 125 to 140"
+    ],
+    "Armlet of Mordiggian": [
+      "Armlet health drain increased from 40 to 45 per second"
+    ],
+    "Phoenix": [
+      "Sun Ray cooldown increased from 20 to 26"
+    ],
+    "Beastmaster": [
+      "Beastmaster Boar Attack Damage reduced from 15/30/45/60 to 10/25/40/55",
+      "Call of the Wild Hawk/Boar manacost increased from 15 to 25"
+    ],
+    "Earth Spirit": [
+      "Rolling Boulder slow duration reduced from 2 to 1.4/1.6/1.8/2.0"
+    ],
+    "Lion": [
+      "Lion's base intelligence reduced by 2"
+    ],
+    "Bounty Hunter": [
+      "Track self bonus gold reduced from 200/275/350 to 170/260/350"
+    ]
+  },
   "6.87c": {
     "Doom": [
       "Infernal Blade base damage reduced from 40 to 25/30/35/40"
