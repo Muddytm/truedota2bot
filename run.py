@@ -34,11 +34,11 @@ def check_comment(comment):
         if not has_replied(comment):
             send_reply(td2tasks.test.run(comment), comment)
 
-    if comment.body.strip().startswith("!patchnotes"):
+    if "!patchnotes" in comment.body.strip():
         if not has_replied(comment):
             send_reply(td2tasks.patchnotes.run(comment), comment)
 
-    if comment.body.strip().startswith("!teamsummary"):
+    if "!teamsummary" in comment.body.strip():
         if not has_replied(comment):
             send_reply(td2tasks.teamsummary.run(comment), comment)
 

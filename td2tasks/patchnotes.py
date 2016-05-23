@@ -11,7 +11,7 @@ def run(comment):
 
     patch_list = ["6.87d", "6.87c", "6.87b", "6.87", "https://nicedotame.me"]
 
-    request = comment.body.strip().replace("!patchnotes", "").strip()
+    request = comment.body.strip().split("!patchnotes")[1].strip()
 
     # Addressing the !patchnotes "hero/item" problem
     request = request.replace("\"", "")
