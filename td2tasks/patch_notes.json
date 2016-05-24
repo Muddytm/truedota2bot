@@ -629,7 +629,423 @@
       "Initial charges increased from 8 to 12"
     ]
   },
-  "https://nicedotame.me": {
+  "6.86": {
+    "Night Stalker": [
+      "Void slow at night reduced from 4 to 2.5\/3\/3.5\/4 seconds"
+    ],
+    "Naga Siren": [
+      "Base Intelligence increased from 18 + 1.95 to 21 + 2.0"
+    ],
+    "Undying": [
+      "Tombstone Zombie damage reduced from 35 to 33",
+      "Tombstone bounty increased from 75\/100\/125\/150 to 125\/150\/175\/200",
+      "Tombstone no longer grants 44 XP"
+    ],
+    "Dragon Knight": [
+      "Dragon Blood HP regen increased from 2\/3\/4\/5 to 3\/6\/9\/12",
+      "Elder Dragon Form Frost AoE increased from 250 to 300 Same AoE as the splash damage"
+    ],
+    "Ursa": [
+      "Scepter added to Ursa. Allows you to cast your ultimate while disabled and reduces cooldown from 50\/40\/30 to 30\/24\/18 seconds.",
+      "Enrage is no longer purgeable"
+    ],
+    "Bane": [
+      "Movement speed reduced from 315 to 310"
+    ],
+    "Venomancer": [
+      "Venomous Gale cooldown reduced from 22 to 21\/20\/19\/18"
+    ],
+    "Tinker": [
+      "Laser cast time improved from 0.53 to 0.4",
+      "Laser cast range increased from 550 to 650"
+    ],
+    "Chaos Knight": [
+      "Reality Rift bonus damage increased from 60\/80\/100\/120 to 60\/100\/140\/180"
+    ],
+    "Outworld Devourer": [
+      "Reworked how Astral Imprisonment works. Astral Imprisonment now deals damage to enemies in an area around the target when it ends. The target itself will also take damage, if it is an enemy. Deals 75\/150\/225\/300 magic damage. Affects a 400 area. You are only hurt once by this AoE with Scepter. No longer steals intelligence. Can now be targeted on creeps.",
+      "Astral Imprisonment cooldown rescaled from 18\/16\/14\/12 to 20\/17\/14\/11",
+      "Astral Imprisonment cast range rescaled from 500 to 450\/500\/550\/600",
+      "Astral Imprisonment duration increased from 1\/2\/3\/4 to 4",
+      "Essence Aura AoE reduced from 1000 to the standard 900 aura radius",
+      "Arcane Orb now steals 0\/1\/2\/3 intelligence per hit for 40 seconds (heroes only)",
+      "Outworld Devourer intelligence growth reduced from 3.3 to 2.7"
+    ],
+    "Faceless Void": [
+      "Temporarily removed from Captain's Mode. Due to hero redesigns, the following heroes have been removed from Captain's Mode for a short period: Death Prophet, Doom, Faceless Void, Lone Druid, Riki and Winter Wyvern. Most of these will return to Captain's Mode in a subsequent 6.86b\/c patch.",
+      "Replaced Backtrack with a new ability, Time Dilation. Time Dilation=======. Applies a debuff to all nearby enemies (650 AoE) for 6\/7\/8\/9 seconds. Causes time to be frozen on all enemy abilities, causing their cooldowns to make no progress while they have this debuff. Slows movement and attack speed by 4\/6\/8\/10% for each locked ability. Cooldown: 34\/28\/22\/16Mana cost: 50.",
+      "Timewalk no longer slows units",
+      "Timewalk now undoes any damage taken in the last 2 seconds",
+      "Timewalk cooldown rescaled from 19\/17\/15\/13 to 24\/18\/12\/6",
+      "Timewalk mana cost reduced from 90 to 40",
+      "Timewalk range reduced from 700\/900\/1100\/1300 to 550",
+      "Timewalk cast point reduced from 0.35 to 0.2"
+    ],
+    "Mirana": [
+      "Attack range increased from 600 to 630",
+      "Starstorm radius increased from 625 to 650",
+      "Sacred Arrow now instantly kills the first unit it hits if it is a non-ancient creep"
+    ],
+    "Bristleback": [
+      "Added Scepter to Bristleback. Nasal Goo is no longer targeted, instead it applies Goo to all enemies around you in 600 AoE when casted.",
+      "Nasal Goo mana cost reduced from 30 to 25",
+      "Quill Spray max damage increased from 400 to 450"
+    ],
+    "Elder Titan": [
+      "Earth Splitter damage rescaled from 35% to 30\/40\/50%",
+      "Earth Splitter mana cost rescaled from 175 to 125\/175\/225",
+      "Earth Splitter's physical damage component is no longer reduced by Damage Block"
+    ],
+    "Windrunner": [
+      "Shackleshot is now disjointable",
+      "Shackleshot speed increased from 1515 to 1650",
+      "Shackleshot angle reduced from 26 degrees to 23 degrees",
+      "Powershot speed no longer decreases by a small amount as it goes through units"
+    ],
+    "Slardar": [
+      "Amplify Damage now only reveals the target rather than the area around it"
+    ],
+    "Shadow Fiend": [
+      "Added Scepter to Shadow Fiend. Requiem of Souls waves now return back to Shadow Fiend dealing 40% damage on the way back. All of the damage the Requiem does to heroes on its way back heals you.",
+      "Base armor reduced by 1",
+      "Shadow Raze mana cost increased from 75 to 90"
+    ],
+    "Templar Assassin": [
+      "Refraction is now always visible"
+    ],
+    "Shadow Demon": [
+      "Disruption illusions duration from 5\/6\/7\/8 to 6\/8\/10\/12 seconds"
+    ],
+    "Keeper of the Light": [
+      "Chakra Magic cooldown reduction increased from 2\/3\/4\/5 to 3\/4\/5\/6",
+      "Chakra Magic buff duration increased from 12 to 15 seconds",
+      "Chakra Magic now restores and increases mana capacity by 75\/150\/225\/300"
+    ],
+    "Necrophos": [
+      "Base armor increased by 1"
+    ],
+    "Medusa": [
+      "Mystic Snake no longer increases manasteal per jump",
+      "Mystic Snake manasteal is now 11\/14\/17\/20% of total mana"
+    ],
+    "Lone Druid": [
+      "Temporarily removed from Captain's Mode. Due to hero redesigns, the following heroes have been removed from Captain's Mode for a short period: Death Prophet, Doom, Faceless Void, Lone Druid, Riki and Winter Wyvern. Most of these will return to Captain's Mode in a subsequent 6.86b\/c patch.",
+      "Replaced Synergy with a new ability for Lone Druid, Savage Roar. Savage Roar=======. Causes enemies in a 325 AoE around you or your bear to run away with 20% movement speed bonus for 1.2\/1.6\/2\/2.4 seconds towards their fountain. Cooldown: 28\/24\/20\/16Mana cost: 50. Note: An entangled hero will not be able to move still. Spirit Bear also has this ability, but the cooldown is shared with your hero.",
+      "Spirit Bear attack damage increased from 33 to 35\/45\/55\/65",
+      "Spirit Bear movement speed increased from 320\/320\/330\/340 to 320\/330\/340\/350",
+      "Rabid duration increased from 10 to 18\/22\/26\/30",
+      "Rabid movement speed increased from 5\/10\/15\/20% to 10\/15\/20\/25%",
+      "True Form Health Bonus increased from 250\/400\/600 to 300\/600\/900"
+    ],
+    "Tiny": [
+      "Craggy Exterior now triggers on attacks landing, rather than on start"
+    ],
+    "Riki": [
+      "Temporarily removed from Captain's Mode. Due to hero redesigns, the following heroes have been removed from Captain's Mode for a short period: Death Prophet, Doom, Faceless Void, Lone Druid, Riki and Winter Wyvern. Most of these will return to Captain's Mode in a subsequent 6.86b\/c patch.",
+      "Reworked Permanent Invisibility to include Backstab. Permanent Invisibility============. Riki grants 0.4\/0.6\/0.8\/1.0 damage when attacking from behind. Invisibility Fade Time: 6\/5\/4\/3 seconds. Note: No longer grants 6\/8\/10\/12 HP regeneration.",
+      "Blink Strike back to basic ability without charges. Damage: 20\/40\/60\/80Cooldown: 16\/12\/8\/4Mana cost: 50.",
+      "Added a new ultimate for Riki, Tricks of the Trade. Tricks of the Trade============. Riki phases out of the world for up to 3\/4\/5 seconds, attacking every enemy from behind in a 450 area around him. He attacks once when phasing out and then once per second while being phased out. Can be cancelled any time. Cooldown: 90\/80\/70Mana cost: 75Cast Point: 0.4.",
+      "Strength growth reduced from 2.0 to 1.6",
+      "Agility growth reduced from 2.9 to 2.2",
+      "Base armor reduced by 1",
+      "Smoke Screen no longer slows turn rates"
+    ],
+    "Doom": [
+      "Temporarily removed from Captain's Mode. Due to hero redesigns, the following heroes have been removed from Captain's Mode for a short period: Death Prophet, Doom, Faceless Void, Lone Druid, Riki and Winter Wyvern. Most of these will return to Captain's Mode in a subsequent 6.86b\/c patch.",
+      "Replaced Level Death with a new ability, Infernal Blade. Infernal Blade=======. Passive\/autocast attack ability. Ministuns for 0.3 seconds and applies a 4 second burn that deals 40 + 1.25\/2.5\/3.75\/5% Max HP as magic damage. Cooldown: 16\/12\/8\/4Mana cost: 40.",
+      "Base Attack Time increased from 1.7 to 2.0",
+      "Scorched Earth damage\/heal reduced from 12\/23\/34\/45 to 10\/20\/30\/40",
+      "Scorched Earth movement speed from 16% to 14%",
+      "Doom cooldown increased from 100 to 125"
+    ],
+    "Invoker": [
+      "Invoker now starts with Invoke Level 1 at the beginning of the game",
+      "Invoke now has the standard 6\/11\/16 leveling",
+      "Level 25 invoker (since he is now missing an ability level) has an attribute bonus ability that grants 6 all stats"
+    ],
+    "Meepo": [
+      "Double Damage no longer affects all Meepo units"
+    ],
+    "Centaur Warrunner": [
+      "Return damage increased from 30\/42\/54\/66 to 30\/45\/60\/75%"
+    ],
+    "Silencer": [
+      "Replaced Curse of the Silent with a new ability, Arcane Curse. Arcane Curse=======. Targets an area, causes enemies to take damage over time. Anytime they cast a spell, the duration of the debuff is increased. If an enemy affected by this debuff is silenced, the debuff will pause (no damage and no time elapses). Duration: 7 secondsStacking Duration: 4 seconds (anytime a spell is cast, this is added to the duration)DPS: 14\/21\/28\/35. Cooldown: 18\/16\/14\/12Mana cost: 75\/95\/115\/135Radius: 425. Affects Creeps. Note: Spell cast means the same stuff as CotS rules were, stuff that procs magic stick and isn't an item.",
+      "Glaives of Wisdom is no longer a Unique Attack Modifier"
+    ],
+    "Jakiro": [
+      "Base damage increased by 7"
+    ],
+    "Broodmother": [
+      "Spawn Spiderlings damage reduced from 75\/150\/225\/300 to 70\/140\/210\/280"
+    ],
+    "Enigma": [
+      "Eidolon movement speed increased from 250\/250\/260\/260 to 260\/280\/300\/320",
+      "Malefice damage increased from 25\/40\/55\/70 to 30\/50\/70\/90",
+      "Black Hole cooldown reduced from 200\/190\/180 to 200\/180\/160"
+    ],
+    "Alchemist": [
+      "Greevil's Greed Bounty Rune multiplier rescaled from 5x to 3\/4\/5\/6x",
+      "Fixed Greevil's Greed granting full gold during Buyback gold penalty phase"
+    ],
+    "Batrider": [
+      "Base HP regeneration increased from 0.25 to 2.0",
+      "Flamebreak mana cost reduced from 140 to 110\/120\/130\/140"
+    ],
+    "Brewmaster": [
+      "Drunken Haze cooldown reduced from 8 to 8\/7\/6\/5",
+      "Primal Split's Dispel Magic damage to summons increased from 200 to 500",
+      "Primal Split's Dispel Magic cooldown reduced from 6 to 4",
+      "Primal Split's Wind Walk cooldown reduced from 7 to 5"
+    ],
+    "Skywrath Mage": [
+      "Concussive Shot mana cost reduced from 110 to 95"
+    ],
+    "Lifestealer": [
+      "Rage attack speed bonus increased from 30\/45\/60\/80 to 50\/60\/70\/80",
+      "Feast damage and lifesteal increased from 4\/5\/6\/7% to 4.5\/5.5\/6.5\/7.5%",
+      "Infest cooldown reduced from 100 to 100\/75\/50"
+    ],
+    "Pugna": [
+      "Decrepify no longer slows allies"
+    ],
+    "Morphling": [
+      "Adaptive Strike base damage increased from 50\/60\/70\/80 to 100",
+      "Adaptive Strike mana cost reduced from 100 to 100\/90\/80\/70",
+      "Morph rate increased from 2\/4\/6\/10 per second to 2\/4\/8\/16",
+      "Morph now shifts in intervals of 1 rather than 2 This change doesn't affect rate of change, just smoothness",
+      "Hybrid cooldown reduced from 140 to 120"
+    ],
+    "Death Prophet": [
+      "Temporarily removed from Captain's Mode. Due to hero redesigns, the following heroes have been removed from Captain's Mode for a short period: Death Prophet, Doom, Faceless Void, Lone Druid, Riki and Winter Wyvern. Most of these will return to Captain's Mode in a subsequent 6.86b\/c patch.",
+      "Replaced Witchcraft with a new ability, Spirit Siphon. Spirit Siphon=======. Creates a spirit link between you and the target, draining 20 + 1\/1.8\/2.6\/3.4% Max HP per second and slowing movement speed by 6\/10\/14\/18%. Lasts 4 seconds. Cast Range: 500. Buffer Distance: 300. Has 1\/2\/3\/4 charges, 45 second replenishA unit cannot be affected by multiple instances at the same time. Cannot target Roshan.Mana cost: 70\/65\/60\/55.",
+      "Base movement speed increased from 280 to 310",
+      "Crypt Swarm cooldown reduced from 8 to 8\/7\/6\/5",
+      "Silence cooldown reduced from 15 to 15\/14\/13\/12",
+      "Exorcism spirit count increased from 8\/14\/21 to 8\/16\/24",
+      "Exorcism spawn rate decreased from 1 ghost per 0.1 seconds to 0.3 seconds"
+    ],
+    "Lion": [
+      "Earth Spike mana cost reduced from 100\/120\/145\/170 to 100\/120\/140\/160",
+      "Earth Spike duration increased from 1.02\/1.52\/2.02\/2.52 to 1.1\/1.6\/2.1\/2.6",
+      "Mana Drain reduced cooldown from 20\/15\/10\/5 to 16\/12\/8\/4"
+    ],
+    "Ogre Magi": [
+      "Base health regen increased from 2.5 to 3.5"
+    ],
+    "Dazzle": [
+      "Poison Touch mana cost reduced from 100 to 70",
+      "Shallow Grave cast point increased from 0.3 to 0.35",
+      "Shallow Grave mana cost increased from 140\/130\/120\/110 to 150",
+      "Weave no longer provides 800 flying vision. Now provides ground vision for the AoE of the ability for 3 seconds"
+    ],
+    "Magnus": [
+      "Added Scepter to Magnus. Changes Empower to be an allied hero aura. Affects ranged heroes for half cleave values and causes them to deal splash damage around the target in a 200 AoE. Can still be cast on units, but does not stack.",
+      "Skewer distance increased from 750\/900\/1050\/1200 to 900\/1000\/1100\/1200",
+      "Skewer slow reduced from 40% to 25\/30\/35\/40%",
+      "Skewer slow duration increased from 2.5 to 2.5\/2.75\/3\/3.25 seconds"
+    ],
+    "Ultimate Orb": [
+      "Vanguard chance from 75% to block 40\/20 to 100% to block 32\/16"
+    ],
+    "Earth Spirit": [
+      "Enabled Earth Spirit in Captain's Mode",
+      "Intelligence growth reduced from 2.4 to 2.1",
+      "Boulder Smash stun AoE reduced from 200 to 160",
+      "Geomagnetic Grip can now only pull allied heroes when using Scepter"
+    ],
+    "Pudge": [
+      "Reworked Scepter on Pudge.   Reduces cooldown of Meat Hook to 4 seconds and increases damage from 360 to 475. Note: No longer grants previous Scepter bonuses.",
+      "Dismember damage from 75\/125\/175 to 60\/90\/120 +30\/40\/50% of strength",
+      "Dismember now heals you for the damage it does"
+    ],
+    "Storm Spirit": [
+      "Electric Vortex mana cost reduced from 100\/110\/120\/130 to 85"
+    ],
+    "Nature's Prophet": [
+      "Base intelligence increased by 4",
+      "Treant damage increased from 28 to 32. This means Greater Treant damage is increased from 84 to 96."
+    ],
+    "Warlock": [
+      "Base strength increased by 4",
+      "Shadow Word duration increased from 11 to 12 seconds"
+    ],
+    "Crystal Maiden": [
+      "Crystal Nova cooldown reduced from 13 to 12",
+      "Arcane Aura level 4 mana regen increased from 2.5\/5 (allies\/self) to 3\/6"
+    ],
+    "Sven": [
+      "Base damage increased by 4",
+      "God's Strength Scepter aura bonus damage increased from 50\/75\/100% to 75\/100\/125%"
+    ],
+    "Huskar": [
+      "Berserker's Blood bonuses are provided linearly from full until 10% HP (rather than stepwise at 7% increments)",
+      "Berserker's Blood maximum magic resistance reduced from 42\/56\/70\/84% to 20\/30\/40\/50%"
+    ],
+    "Shadow Shaman": [
+      "Shackles total damage increased from 120\/180\/240\/300 to 120\/200\/280\/360",
+      "Mass Serpent Wards require 2 hits to destroy Previously had 135\/150\/150 hp"
+    ],
+    "Sand King": [
+      "Reworked Scepter on Sand King. Doubles Burrowstrike cast range and applies Caustic Finale poison to heroes. Note: No longer grants previous Scepter bonuses.",
+      "Base strength increased from 18 to 21",
+      "Caustic Finale slow increased from 25% to 30%"
+    ],
+    "Dark Seer": [
+      "Base intelligence reduced from 27 to 25",
+      "Ion Shell is now purgeable"
+    ],
+    "Clinkz": [
+      "Agility growth increased from 3 to 3.3"
+    ],
+    "Clockwerk": [
+      "Strength growth increased from 2.7 to 2.9",
+      "Power Cogs now spawn in a circle rather than a rectangle"
+    ],
+    "Witch Doctor": [
+      "Maledict mana cost reduced from 120 to 105\/110\/115\/120",
+      "Maledict cast range increased from 525 to 575"
+    ],
+    "Oracle": [
+      "Enabled Oracle in Captain's Mode",
+      "Fate's Edict cooldown rescaled from 12 to 16\/13\/10\/7",
+      "Fate's Edict duration reduced from 3\/4\/5\/6 to 3\/3.5\/4\/4.5",
+      "Fate's Edict cast range rescaled from 700 to 500\/600\/700\/800",
+      "Fortune's End mana cost reduced from 130 to 110",
+      "Fortune's End can now target allies Does not root or hurt the ally, but purges and applies the effect in the area",
+      "False Promise no longer continuously dispels after the initial cast It previously continuously removed all debuffs including stuns",
+      "False Promise duration increased from 6\/7\/8 to 7\/8\/9",
+      "False Promise cooldown rescaled from 80\/60\/40 to 90\/60\/30",
+      "False Promise mana cost reduced from 200 to 100"
+    ],
+    "Enchantress": [
+      "Enchant cooldown reduced from 30\/25\/20\/15 to 30\/24\/18\/12"
+    ],
+    "Puck": [
+      "Illusory Orb mana cost reduced from 150 to 80\/100\/120\/140",
+      "Illusory Orb cooldown increased from 11 to 14\/13\/12\/11",
+      "Waning Rift cooldown reduced from 16 to 16\/15\/14\/13",
+      "Waning Rift no longer only silences heroes"
+    ],
+    "Nyx Assassin": [
+      "Nyx Impale duration increased from 1.27\/1.77\/2.27\/2.77 to 1.6\/2.0\/2.4\/2.8",
+      "Spiked Carapace cooldown reduced from 23\/20\/17\/14 to 22\/18\/14\/10"
+    ],
+    "Bounty Hunter": [
+      "Jinada movement and attack speed reduction increased from 25% to 25\/27\/29\/31%"
+    ],
+    "Luna": [
+      "Turn rate increased from 0.4 to 0.6",
+      "Eclipse Scepter beam interval reduced from 0.6 to 0.3"
+    ],
+    "Timbersaw": [
+      "Whirling Death debuff duration increased from 7 to 11",
+      "Whirling Death mana cost decreased from 70\/80\/90\/100 to 70",
+      "Reactive Armor duration rescaled from 16 to 14\/16\/18\/20"
+    ],
+    "Queen of Pain": [
+      "Scream of Pain damage reduced from 85\/165\/225\/300 to 75\/150\/225\/300",
+      "Sonic Wave travel speed reduced from 1100 to 900"
+    ],
+    "Tusk": [
+      "Movement speed reduced from 305 to 300",
+      "Ice Shards damage reduced from 70\/140\/210\/280 to 60\/120\/180\/240",
+      "Snowball can no longer pull units out of Blackhole or Chronosphere",
+      "Snowball gather radius reduced from 400 to 350"
+    ],
+    "Lycan": [
+      "Lycan Wolves and Shapeshift no longer grant critical strike",
+      "Lycan Wolves now gain Cripple at level 2, granting a 20% chance to cripple the target, causing it to take 8 damage per second and lose 40 Attack Speed for 4 seconds.",
+      "Shapeshift now grants all units under your control a 40% chance for 1.4\/1.6\/1.8x critical strike"
+    ],
+    "Winter Wyvern": [
+      "Temporarily removed from Captain's Mode. Due to hero redesigns, the following heroes have been removed from Captain's Mode for a short period: Death Prophet, Doom, Faceless Void, Lone Druid, Riki and Winter Wyvern. Most of these will return to Captain's Mode in a subsequent 6.86b\/c patch.",
+      "Cold Embrace cooldown increased from 17\/16\/15\/14 to 24\/21\/18\/15",
+      "Arctic Burn slow reduced from 25\/30\/35\/40% to 19\/26\/33\/40%",
+      "Winter's Curse primary and secondary units are now immune to all damage from their enemies",
+      "Winter's Curse secondary units now have 50 attack speed bonus",
+      "Winter's Curse AoE increased increased from 400 to 500",
+      "Winter's Curse cooldown increased from 110\/100\/90 to 120\/110\/100",
+      "Winter's Curse duration increased from 2.5\/3\/3.5 to 3.25\/4\/4.75",
+      "Fixed Winter's Curse lingering if the primary target died"
+    ],
+    "Phoenix": [
+      "Sun Ray turn rate increased from 20 to 25",
+      "Supernova damage per second increased from 60\/80\/100 to 60\/90\/120"
+    ],
+    "Beastmaster": [
+      "Wild Axes no longer has unit targeting",
+      "Call of the Wild cooldown rescaled from 40 to 42\/38\/34\/30"
+    ],
+    "Bloodseeker": [
+      "Blood Rite cooldown rescaled from 29\/26\/23\/20 to 30\/25\/20\/15"
+    ],
+    "Gyrocopter": [
+      "Call Down's first missile damage reduced from 250\/300\/350 to 220\/285\/350"
+    ],
+    "Drow Ranger": [
+      "Added Scepter to Drow Ranger. Marksmanship now causes her attacks to splinter on the target and split into two arrows affecting two random units in a 375 radius. The splintered arrows deal 50% damage each. Primary target still takes full damage. The split arrows act as normal attacks, carrying all attack modifiers."
+    ],
+    "Vengeful Spirit": [
+      "Added Scepter bonus to Vengeful Spirit. Causes you to spawn a Vengeance Illusion when you die. The Vengeance Illusion deals 50% damage, takes 150% damage, and is able to use all of your abilities (but not items). The Vengeance Illusion lasts until she revives. Note: Still grants previous Scepter bonuses to Netherswap."
+    ],
+    "Terrorblade": [
+      "Enabled Terrorblade in Captain's Mode"
+    ],
+    "Kunkka": [
+      "Added Scepter to Kunkka. Ghost Ship now drags enemies within a 200 AoE of it towards the crash site. It now starts from where you are, rather than behind you, lands in the same position it normally would have. Enemies are still able to perform actions while being pulled by the Ghost Ship. Works similiar to Drow Ranger's Gust knockback.",
+      "Torrent now gives your team vision over target area immediately upon cast, rather than just when triggering",
+      "Tidebringer is now an autocast ability, will only trigger if turned on or cast directly on the target",
+      "Tidebringer damage bonus increased from 20\/35\/50\/65 to 25\/40\/55\/70",
+      "Tidebringer AoE from rescaled 500\/500\/500\/600 to 450\/500\/550\/600",
+      "Ghost Ship mana cost reduced from 150\/200\/250 to 125\/175\/225"
+    ],
+    "Weaver": [
+      "Base damage increased by 3",
+      "The Swarm Beetles' Base Attack Time improved from 1.4\/1.25\/1.1\/0.95 to 1.25\/1.1\/0.95\/0.8"
+    ],
+    "Troll Warlord": [
+      "Fervor reduced from 20\/25\/30\/35 to 15\/20\/25\/30",
+      "Fervor max stacks increased from 4 to 6",
+      "Ranged Whirling Axes cooldown reduced from 20\/19\/18\/17 to 20\/18\/16\/14"
+    ],
+    "Treant Protector": [
+      "Leech Seed mana cost reduced from 100\/110\/120\/130 to 80\/95\/110\/125",
+      "Overgrowth AoE increased from 675 to 800",
+      "Scepter Overgrowth damage and vision AoE increased from 700 to 800"
+    ],
+    "Visage": [
+      "Stone Form AoE increased from 340 to 350"
+    ],
+    "Ember Spirit": [
+      "Fire Remnants no longer give vision"
+    ],
+    "Legion Commander": [
+      "Moment of Courage cooldown reduced from 2.7\/2.1\/1.5\/0.9 to 2.6\/2.0\/1.4\/0.8",
+      "Legion Commander's Scepter now makes you and your target immune to all damage unless the source is between the Duel participants.",
+      "Legion Commander's Scepter duration is now 4.75\/5.5\/6.25"
+    ],
+    "Wraith King": [
+      "Vampiric Aura can now be toggled to make the lifesteal for heroes only"
+    ],
+    "Tidehunter": [
+      "Added Scepter to Tidehunter. Causes Gush to become a ground targeted wave ability that travels for 1800 range. AoE: 240Projectile speed: 1500Cooldown: 7.",
+      "Anchor Smash cast time reduced from 0.5 to 0.4",
+      "Ravage stun duration rescaled from 2.02\/2.32\/2.77 to 2.0\/2.4\/2.8"
+    ],
+    "Phantom Assassin": [
+      "Base Intelligence increased from 13 + 1 to 15 + 1.4"
+    ],
+    "Chen": [
+      "Base strength increased from 20 to 23",
+      "Penitence mana cost reduced from 100 to 70",
+      "Penitence duration increased from 5\/6\/7\/8 to 8"
+    ],
+    "Rubick": [
+      "Fade Bolt attack damage reduction increased from 14\/20\/26\/32 to 20\/25\/30\/35"
+    ]
+  },
+  "nicedotame.me": {
     "Abyssal Underlord": [
       "Source 2 will fix this."
     ]

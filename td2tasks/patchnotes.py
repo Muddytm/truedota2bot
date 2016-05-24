@@ -9,7 +9,8 @@ def sanitize(text):
 def run(comment):
     """List recent changes of hero or item based on patch_notes.json."""
 
-    patch_list = ["6.87d", "6.87c", "6.87b", "6.87", "https://nicedotame.me"]
+    major_patch_list = ["6.87", "6.86"]
+    patch_list = ["6.87d", "6.87c", "6.87b", "6.87", "6.86", "https://nicedotame.me"]
 
     request = comment.body.strip().split("!patchnotes")[1].strip()
 
@@ -25,10 +26,37 @@ def run(comment):
         # No hero/item given
         return
 
+    patch_numbers = []
+    changelogs = []
     changelog = None
 
-    # Verify if a patch number was given and if data exists for it.
-    if (patch_number in patch_list):
+    # "Since" functionality suggested by /u/dpekkle
+    # !patchnotes [hero/item] since [patch number]
+    if (len(request.split()) >= 3 and
+            request.split()[len(request.split()) - 2] == "since"):
+        request = request.replace("since ", "").strip()
+
+        if request.split()[len(request.split()) - 1] in patch_list:
+            patch_til = request.split()[len(request.split()) - 1]
+            print patch_til
+            request = request.replace(patch_til, "").strip()
+            print request
+        else:
+            return
+
+        # Request = hero or item we want notes for
+        # Patch_til = get notes up through this
+
+        for patch in patch_list:
+            for heroitem, change in notes[patch].iteritems():
+                if sanitize(heroitem).startswith(sanitize(request)):
+                    request = heroitem
+                    patch_numbers.append(patch)
+                    changelogs.append(notes[patch][heroitem])
+                    break
+            if patch == patch_til:
+                break
+    elif (patch_number in patch_list):
         request = request.replace(patch_number, "").strip()
 
         if request == "":
@@ -38,53 +66,38 @@ def run(comment):
             if sanitize(heroitem).startswith(sanitize(request)):
                 request = heroitem
                 break
-            else:
-                pass
-                # done = False
-                # for word in sanitize(request).split():
-                #     if (word in sanitize(heroitem) and word != "the" and
-                #             word != "of"):
-                #         request = heroitem
-                #         done = True
-                #         break
-                # if done:
-                #     break
 
         if request in notes[patch_number]:
             changelog = notes[patch_number][request]
     else:
-        done = False
+        newest_patch = major_patch_list[0]
         for patch in patch_list:
-            if done:
-                break
+            if not patch.startswith(newest_patch):
+                continue
             for heroitem, change in notes[patch].iteritems():
                 if sanitize(heroitem).startswith(sanitize(request)):
-                    patch_number = patch
                     request = heroitem
-                    changelog = notes[patch][request]
-                    done = True
+                    patch_numbers.append(patch)
+                    changelogs.append(notes[patch][heroitem])
                     break
-                else:
-                    pass
-                    # for word in sanitize(request).split():
-                    #     if (word in sanitize(heroitem) and word != "the" and
-                    #             word != "of"):
-                    #         patch_number = patch
-                    #         request = heroitem
-                    #         changelog = notes[patch][request]
-                    #         done = True
-                    #         break
-                    # if done:
-                    #     break
 
-    if not changelog:
+    # Got nothing? Get outta here.
+    if not changelog and len(changelogs) == 0:
         return
 
     url_name = request.strip().replace(" ", "_")
-    response = ("[**" + request + "**](http://dota2.gamepedia.com/"
-                "" + url_name + ") (" + patch_number + "):\n\n")
-    for change in changelog:
-        response += ("- " + change + "\n\n")
+    if len(changelogs) > 0:
+        response = ("[**" + request + "**](http://dota2.gamepedia.com/"
+                    "" + url_name + "):\n\n")
+        for i in range(len(patch_numbers)):  # We need to use indices
+            response += ("*" + patch_numbers[i] + ":*\n\n")
+            for change in changelogs[i]:
+                response += ("- " + change + "\n\n")
+    elif changelog:
+        response = ("[**" + request + "**](http://dota2.gamepedia.com/"
+                    "" + url_name + ") (" + patch_number + "):\n\n")
+        for change in changelog:
+            response += ("- " + change + "\n\n")
 
     if response != "":
         return response

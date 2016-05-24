@@ -1,3 +1,6 @@
+# This is basically unused for TD2bot, but it's a nice experiment with
+# webpage-scraping via the BeautifulSoup module.
+
 from bs4 import BeautifulSoup
 import commands
 import json
@@ -189,15 +192,15 @@ def update_patch(patch):
         if not heroitem:
             break
 
-    with open("td2tasks/patch_notes.json", "w+") as file:
+    with open("td2tasks/new_patch_notes.json", "w+") as file:
         json.dump(notes, file)
 
 
 def main():
     """Hub of updates for truedota2bot."""
-    print ("Running this will override patch_notes.json. Careful what you wish "
-           "for.")
-    #update_patch("http://www.dota2.com/687")  # Supported: 6.87, 6.85
+    #print ("Running this will override patch_notes.json. Careful what you wish "
+    #       "for.")
+    update_patch("https://www.dota2.com/balanceofpower")  # Supported: 6.87, 6.85
 
 
 if __name__ == "__main__":
