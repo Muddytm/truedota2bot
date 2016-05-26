@@ -3,7 +3,7 @@
 
 import discord
 import logging
-import tasks
+import td2tasks
 
 client = discord.Client()
 
@@ -24,9 +24,10 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    info = (client, message)
-
-    await tasks.general.run(*info)
+    if "!patchnotes" in message.content:
+        response = td2tasks.patchnotes.run(message.content)
+        if response and response != "":
+            await client.send_message(message.channel, response)
 
 
 with open("config_discord.yml") as file:

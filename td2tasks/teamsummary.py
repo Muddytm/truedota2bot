@@ -40,7 +40,7 @@ def construct_response(heroes):
     team_data["pusher"] = 0
     team_data["jungler"] = 0
 
-    with open("td2tasks/heroes.json") as file:
+    with open("td2tasks/heroes_imo.json") as file:
         hero_data = json.load(file)
 
     for hero in heroes:

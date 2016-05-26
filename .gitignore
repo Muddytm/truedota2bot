@@ -3,5 +3,5 @@ config.yml
 td2tasks/*.pyc
 pid.pid
 td2tasks/new_patch_notes.json
-td2tasks/teamsummary.jpg
+config_discord.yml
 
