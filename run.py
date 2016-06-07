@@ -67,11 +67,14 @@ def start():
     reddit.login(user, password, disable_warning=True)
 
     while True:
-        subreddit = reddit.get_subreddit(sub)
-        for submission in subreddit.get_new(limit=50):  # Arbitrary
-            comments = submission.comments
-            for comment in comments:
-                check_comment(comment)
+        try:
+            subreddit = reddit.get_subreddit(sub)
+            for submission in subreddit.get_new(limit=50):  # Arbitrary
+                comments = submission.comments
+                for comment in comments:
+                    check_comment(comment)
+        except praw.errors.HTTPException:
+            print ("Ran into an error?")
 
 
 if __name__ == "__main__":
