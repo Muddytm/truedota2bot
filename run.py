@@ -42,6 +42,10 @@ def check_comment(comment):
         if not has_replied(comment):
             send_reply(td2tasks.teamsummary.run(comment), comment)
 
+    if "!newteamsummary" in comment.body.strip():
+        if not has_replied(comment):
+            send_reply(td2tasks.newteamsummary.run(comment), comment)
+
     for reply in comment.replies:
         try:
             check_comment(reply)
@@ -72,7 +76,10 @@ def start():
             for submission in subreddit.get_new(limit=50):  # Arbitrary
                 comments = submission.comments
                 for comment in comments:
-                    check_comment(comment)
+                    try:
+                        check_comment(comment)
+                    except AttributeError:
+                        pass
         except praw.errors.HTTPException:
             print ("Ran into an error?")
 

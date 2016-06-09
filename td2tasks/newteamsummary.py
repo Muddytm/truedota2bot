@@ -1,5 +1,8 @@
 from bs4 import BeautifulSoup
 import commands
+import create_graph
+from PIL import Image
+from PIL import ImageDraw
 import json
 
 
@@ -40,22 +43,25 @@ def construct_response(heroes):
     team_data["pusher"] = 0
     team_data["jungler"] = 0
 
+    names = []
+
     with open("td2tasks/heroes_imo.json") as file:
         hero_data = json.load(file)
 
     for hero in heroes:
         for heroname, herodata in hero_data.iteritems():
             if sanitize(heroname).startswith(sanitize(hero)):
+                names.append(sanitize(heroname))
                 for role, rating in herodata.iteritems():
                     if role in team_data:
                         team_data[role] += rating
 
-    return team_data
+    return team_data, names
 
 
 def run(comment):
     """Get team composition and report with what the team is strongest in."""
-    request = comment.body.strip().split("!teamsummary")[1].strip()
+    request = comment.body.strip().split("!newteamsummary")[1].strip()
 
     while request.endswith(","):
         request = request[:-1].strip()
@@ -68,45 +74,17 @@ def run(comment):
         if len(heroes) > 5:
             return
 
-        new_team_data = construct_response(heroes)
+        new_team_data, names = construct_response(heroes)
 
-        for role, rating in new_team_data.iteritems():
-            response += ("" + role + ": **" + str(rating) + "**\n\n")
+        print new_team_data
+        im = create_graph.create(new_team_data)
 
-    elif (request.startswith("http://www.dotabuff.com/matches/") or
-            request.startswith("www.dotabuff.com/matches/") or
-            request.startswith("dotabuff.com/matches/")):
+        print names
 
-            status, output = commands.getstatusoutput("curl -s " + request)
+        for name in names:
+            icon = Image.open("td2tasks/assets/hero_icons/" + name.replace(" ", "_") + "_icon.png").convert("RGBA")
+            offset = ((names.index(name) * 80) + 50, 15)
+            im.paste(icon, offset, icon)
+            names[names.index(name)] = None  # To allow for silly 5 Io teams
 
-            soup = BeautifulSoup(output, "html.parser")
-
-            radi_heroes = []
-            dire_heroes = []
-
-            for hero in soup.find_all("div", {"class": "image-container image-container-hero image-container-icon"}):
-                hero = str(hero.find("a"))
-
-                hero = hero[17:hero.find("\"><img class=\"image-hero image-icon")]
-
-                if len(radi_heroes) < 5:
-                    radi_heroes.append(better_string(hero))
-                elif len(dire_heroes) < 5:
-                    dire_heroes.append(better_string(hero))
-                else:
-                    break
-
-            radi_data = construct_response(radi_heroes)
-            dire_data = construct_response(dire_heroes)
-
-            response += ("#**Radiant:**\n\n")
-            for role, rating in radi_data.iteritems():
-                response += ("" + role + ": **" + str(rating) + "**\n\n")
-
-            response += ("\n\n#**Dire:**\n\n")
-            for role, rating in dire_data.iteritems():
-                response += ("" + role + ": **" + str(rating) + "**\n\n")
-    else:
-        return
-
-    return response
+        im.save("tsimage.png")

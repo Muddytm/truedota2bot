@@ -4,4 +4,5 @@ td2tasks/*.pyc
 pid.pid
 td2tasks/new_patch_notes.json
 config_discord.yml
-
+td2tasks/example.png
+tsimage.png

@@ -841,14 +841,14 @@
   },
   "Bounty Hunter": {
     "carry": 1,
-    "support": 2,
-    "nuker": 1,
+    "support": 3,
+    "nuker": 2,
     "disabler": 1,
     "jungler": 0,
     "durable": 0,
-    "escape": 3,
+    "escape": 2,
     "pusher": 0,
-    "initiator": 2,
+    "initiator": 1,
     "name": "bounty_hunter",
     "id": 62,
     "localized_name": "Bounty Hunter"
@@ -966,10 +966,10 @@
     "localized_name": "Ursa"
   },
   "Spirit Breaker": {
-    "carry": 1,
+    "carry": 0,
     "support": 1,
     "nuker": 1,
-    "disabler": 2,
+    "disabler": 3,
     "jungler": 0,
     "durable": 2,
     "escape": 1,
@@ -982,8 +982,8 @@
   "Gyrocopter": {
     "carry": 3,
     "support": 1,
-    "nuker": 1,
-    "disabler": 1,
+    "nuker": 2,
+    "disabler": 0,
     "jungler": 1,
     "durable": 0,
     "escape": 0,
