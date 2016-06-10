@@ -7,6 +7,7 @@ To run, you'll need the following installed and ready to go for Python:
 - PRAW (Python Reddit API Wrapper)
 - YAML (AKA: pyYAML - this is used to parse config.yml)
 - BeautifulSoup (to parse some web stuff)
+- PIL (pip install Pillow - you may need to sudo apt-get install lipjpeg-dev and zlib1g-dev, and this http://stackoverflow.com/questions/26053982/error-setup-script-exited-with-error-command-x86-64-linux-gnu-gcc-failed-wit)
 
 You can simply "pip install" these packages.
 
