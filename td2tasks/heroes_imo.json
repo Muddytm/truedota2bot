@@ -99,8 +99,8 @@
   },
   "Juggernaut": {
     "carry": 3,
-    "support": 1,
-    "nuker": 0,
+    "support": 0,
+    "nuker": 1,
     "disabler": 0,
     "jungler": 1,
     "durable": 1,
@@ -1050,12 +1050,12 @@
     "localized_name": "Outworld Devourer"
   },
   "Lycan": {
-    "carry": 2,
+    "carry": 3,
     "support": 0,
     "nuker": 0,
     "disabler": 0,
     "jungler": 1,
-    "durable": 1,
+    "durable": 0,
     "escape": 3,
     "pusher": 3,
     "initiator": 0,

@@ -73,7 +73,7 @@ def start():
     while True:
         try:
             subreddit = reddit.get_subreddit(sub)
-            for submission in subreddit.get_new(limit=50):  # Arbitrary
+            for submission in subreddit.get_new(limit=2):  # Arbitrary
                 comments = submission.comments
                 for comment in comments:
                     try:

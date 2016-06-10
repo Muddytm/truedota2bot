@@ -3,7 +3,9 @@ import commands
 import create_graph
 from PIL import Image
 from PIL import ImageDraw
+from imgurpython import ImgurClient
 import json
+import yaml
 
 
 def sanitize(text):
@@ -27,6 +29,11 @@ def better_string(text):
             name += (word[0].upper() + word[1:].lower() + " ")
 
     return name.strip()
+
+
+def upload_image(client):
+    """Upload the image and return the resulting JSON."""
+    return client.upload_from_path("tsimage.png")
 
 
 def construct_response(heroes):
@@ -88,3 +95,16 @@ def run(comment):
             names[names.index(name)] = None  # To allow for silly 5 Io teams
 
         im.save("tsimage.png")
+
+        f = open("config.yml")
+        config = yaml.safe_load(f)
+        f.close()
+
+        client_id = config["imgur_id"]
+        client_secret = config["imgur_secret"]
+
+        client = ImgurClient(client_id, client_secret)
+
+        image = upload_image(client)
+
+        return ("Here\'s a summary of your team: \n\n" + image["link"])
