@@ -67,11 +67,7 @@ def construct_response(heroes):
 
 def run(comment):
     """Get team composition and report with what the team is strongest in."""
-<<<<<<< HEAD
     request = comment.strip().split("!teamsummary")[1].strip()
-=======
-    request = comment.body.strip().split("!teamsummary")[1].strip()
->>>>>>> ba69066c7bc69afc7dcde9fcfd0221bc3d7de1e2
 
     while request.endswith(","):
         request = request[:-1].strip()
