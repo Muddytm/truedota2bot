@@ -38,17 +38,9 @@ def check_comment(comment):
         if not has_replied(comment):
             send_reply(td2tasks.patchnotes.run(comment.body), comment)
 
-    if "!oldteamsummary" in comment.body.strip():
-        if not has_replied(comment):
-<<<<<<< HEAD
-            send_reply(td2tasks.newteamsummary.run(comment.body), comment)
-=======
-            send_reply(td2tasks.teamsummary.run(comment), comment)
-
     if "!teamsummary" in comment.body.strip():
         if not has_replied(comment):
             send_reply(td2tasks.newteamsummary.run(comment), comment)
->>>>>>> ba69066c7bc69afc7dcde9fcfd0221bc3d7de1e2
 
     for reply in comment.replies:
         try:
