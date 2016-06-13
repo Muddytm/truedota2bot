@@ -32,19 +32,15 @@ def check_comment(comment):
     """Recursively check a comment and its replies."""
     if comment.body.strip().startswith("!test"):
         if not has_replied(comment):
-            send_reply(td2tasks.test.run(comment), comment)
+            send_reply(td2tasks.test.run(comment.body), comment)
 
     if "!patchnotes" in comment.body.strip():
         if not has_replied(comment):
-            send_reply(td2tasks.patchnotes.run(comment), comment)
+            send_reply(td2tasks.patchnotes.run(comment.body), comment)
 
     if "!teamsummary" in comment.body.strip():
         if not has_replied(comment):
-            send_reply(td2tasks.teamsummary.run(comment), comment)
-
-    if "!newteamsummary" in comment.body.strip():
-        if not has_replied(comment):
-            send_reply(td2tasks.newteamsummary.run(comment), comment)
+            send_reply(td2tasks.newteamsummary.run(comment.body), comment)
 
     for reply in comment.replies:
         try:

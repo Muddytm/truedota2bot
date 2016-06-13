@@ -4,6 +4,7 @@
 import discord
 import logging
 import td2tasks
+import yaml
 
 client = discord.Client()
 
@@ -26,6 +27,13 @@ async def on_message(message):
 
     if "!patchnotes" in message.content:
         response = td2tasks.patchnotes.run(message.content)
+        if response and response != "":
+            name = response.split("]")[0][1:]
+            response = ("**" + name + "**" + response.split("):")[1])
+            await client.send_message(message.channel, response)
+
+    if "!teamsummary" in message.content:
+        response = td2tasks.newteamsummary.run(message.content)
         if response and response != "":
             await client.send_message(message.channel, response)
 

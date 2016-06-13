@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import commands
 import create_graph
 from PIL import Image
 from PIL import ImageDraw
@@ -56,10 +55,10 @@ def construct_response(heroes):
         hero_data = json.load(file)
 
     for hero in heroes:
-        for heroname, herodata in hero_data.iteritems():
+        for heroname, herodata in hero_data.items():
             if sanitize(heroname).startswith(sanitize(hero)):
                 names.append(sanitize(heroname))
-                for role, rating in herodata.iteritems():
+                for role, rating in herodata.items():
                     if role in team_data:
                         team_data[role] += rating
 
@@ -68,7 +67,7 @@ def construct_response(heroes):
 
 def run(comment):
     """Get team composition and report with what the team is strongest in."""
-    request = comment.body.strip().split("!newteamsummary")[1].strip()
+    request = comment.strip().split("!teamsummary")[1].strip()
 
     while request.endswith(","):
         request = request[:-1].strip()
@@ -83,10 +82,10 @@ def run(comment):
 
         new_team_data, names = construct_response(heroes)
 
-        print new_team_data
+        #print (new_team_data)
         im = create_graph.create(new_team_data)
 
-        print names
+        #print names
 
         for name in names:
             icon = Image.open("td2tasks/assets/hero_icons/" + name.replace(" ", "_") + "_icon.png").convert("RGBA")

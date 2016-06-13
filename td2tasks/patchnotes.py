@@ -9,10 +9,10 @@ def sanitize(text):
 def run(comment):
     """List recent changes of hero or item based on patch_notes.json."""
 
-    major_patch_list = ["6.87", "6.86"]
-    patch_list = ["6.87d", "6.87c", "6.87b", "6.87", "6.86", "https://nicedotame.me"]
+    major_patch_list = ["6.88", "6.87", "6.86"]
+    patch_list = ["6.88", "6.87d", "6.87c", "6.87b", "6.87", "6.86", "https://nicedotame.me"]
 
-    request = comment.body.strip().split("!patchnotes")[1].strip()
+    request = comment.strip().split("!patchnotes")[1].strip()
 
     # Addressing the !patchnotes "hero/item" problem
     request = request.replace("\"", "")
@@ -38,9 +38,9 @@ def run(comment):
 
         if request.split()[len(request.split()) - 1] in patch_list:
             patch_til = request.split()[len(request.split()) - 1]
-            print patch_til
+            #print (patch_til)
             request = request.replace(patch_til, "").strip()
-            print request
+            #print (request)
         else:
             return
 
@@ -48,7 +48,7 @@ def run(comment):
         # Patch_til = get notes up through this
 
         for patch in patch_list:
-            for heroitem, change in notes[patch].iteritems():
+            for heroitem, change in notes[patch].items():
                 if sanitize(heroitem).startswith(sanitize(request)):
                     request = heroitem
                     patch_numbers.append(patch)
@@ -62,7 +62,7 @@ def run(comment):
         if request == "":
             return
 
-        for heroitem, change in notes[patch_number].iteritems():
+        for heroitem, change in notes[patch_number].items():
             if sanitize(heroitem).startswith(sanitize(request)):
                 request = heroitem
                 break
@@ -74,7 +74,7 @@ def run(comment):
         for patch in patch_list:
             if not patch.startswith(newest_patch):
                 continue
-            for heroitem, change in notes[patch].iteritems():
+            for heroitem, change in notes[patch].items():
                 if sanitize(heroitem).startswith(sanitize(request)):
                     request = heroitem
                     patch_numbers.append(patch)
@@ -95,7 +95,7 @@ def run(comment):
                 response += ("- " + change + "\n\n")
     elif changelog:
         response = ("[**" + request + "**](http://dota2.gamepedia.com/"
-                    "" + url_name + ") (" + patch_number + "):\n\n")
+                    "" + url_name + "):\n\n*" + patch_number + "*:\n\n")
         for change in changelog:
             response += ("- " + change + "\n\n")
 

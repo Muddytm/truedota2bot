@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import commands
+import subprocess
 import json
 
 
@@ -44,9 +44,9 @@ def construct_response(heroes):
         hero_data = json.load(file)
 
     for hero in heroes:
-        for heroname, herodata in hero_data.iteritems():
+        for heroname, herodata in hero_data.items():
             if sanitize(heroname).startswith(sanitize(hero)):
-                for role, rating in herodata.iteritems():
+                for role, rating in herodata.items():
                     if role in team_data:
                         team_data[role] += rating
 
@@ -55,7 +55,7 @@ def construct_response(heroes):
 
 def run(comment):
     """Get team composition and report with what the team is strongest in."""
-    request = comment.body.strip().split("!teamsummary")[1].strip()
+    request = comment.strip().split("!teamsummary")[1].strip()
 
     while request.endswith(","):
         request = request[:-1].strip()
@@ -70,14 +70,15 @@ def run(comment):
 
         new_team_data = construct_response(heroes)
 
-        for role, rating in new_team_data.iteritems():
+        for role, rating in new_team_data.items():
             response += ("" + role + ": **" + str(rating) + "**\n\n")
 
     elif (request.startswith("http://www.dotabuff.com/matches/") or
             request.startswith("www.dotabuff.com/matches/") or
             request.startswith("dotabuff.com/matches/")):
 
-            status, output = commands.getstatusoutput("curl -s " + request)
+            output = subprocess(["curl", "-s", request])
+            #status, output = commands.getstatusoutput("curl -s " + request)
 
             soup = BeautifulSoup(output, "html.parser")
 
@@ -100,11 +101,11 @@ def run(comment):
             dire_data = construct_response(dire_heroes)
 
             response += ("#**Radiant:**\n\n")
-            for role, rating in radi_data.iteritems():
+            for role, rating in radi_data.items():
                 response += ("" + role + ": **" + str(rating) + "**\n\n")
 
             response += ("\n\n#**Dire:**\n\n")
-            for role, rating in dire_data.iteritems():
+            for role, rating in dire_data.items():
                 response += ("" + role + ": **" + str(rating) + "**\n\n")
     else:
         return
