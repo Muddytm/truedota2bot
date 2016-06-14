@@ -57,7 +57,7 @@ def construct_response(heroes):
     for hero in heroes:
         for heroname, herodata in hero_data.items():
             if sanitize(heroname).startswith(sanitize(hero)):
-                names.append(sanitize(heroname))
+                names.append(heroname)
                 for role, rating in herodata.items():
                     if role in team_data:
                         team_data[role] += rating

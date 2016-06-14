@@ -70,16 +70,21 @@ def run(comment):
         if request in notes[patch_number]:
             changelog = notes[patch_number][request]
     else:
-        newest_patch = major_patch_list[0]
-        for patch in patch_list:
-            if not patch.startswith(newest_patch):
-                continue
-            for heroitem, change in notes[patch].items():
-                if sanitize(heroitem).startswith(sanitize(request)):
-                    request = heroitem
-                    patch_numbers.append(patch)
-                    changelogs.append(notes[patch][heroitem])
-                    break
+        for major_patch in major_patch_list:
+            # We only want to get changes from the most recent patch w/ subpatches
+            if changelogs == []:
+                newest_patch = major_patch
+            else:
+                break
+            for patch in patch_list:
+                if not patch.startswith(newest_patch):
+                    continue
+                for heroitem, change in notes[patch].items():
+                    if sanitize(heroitem).startswith(sanitize(request)):
+                        request = heroitem
+                        patch_numbers.append(patch)
+                        changelogs.append(notes[patch][heroitem])
+                        break
 
     # Got nothing? Get outta here.
     if not changelog and len(changelogs) == 0:
