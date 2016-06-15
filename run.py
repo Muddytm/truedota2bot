@@ -40,7 +40,7 @@ def check_comment(comment):
 
     if "!teamsummary" in comment.body.strip():
         if not has_replied(comment):
-            send_reply(td2tasks.newteamsummary.run(comment), comment)
+            send_reply(td2tasks.newteamsummary.run(comment.body), comment)
 
     for reply in comment.replies:
         try:
@@ -69,7 +69,7 @@ def start():
     while True:
         try:
             subreddit = reddit.get_subreddit(sub)
-            for submission in subreddit.get_new(limit=2):  # Arbitrary
+            for submission in subreddit.get_new(limit=50):  # Arbitrary
                 comments = submission.comments
                 for comment in comments:
                     try:
