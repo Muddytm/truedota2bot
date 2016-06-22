@@ -4,6 +4,7 @@ import time
 import td2tasks
 import yaml
 
+author = ""
 user = ""
 password = ""
 jokes = ["Hoho, haha! ", "Zip! Zap! ", "Beep boop, ", "Meep merp, ", "Waow! "]
@@ -14,7 +15,7 @@ def send_reply(text, comment):
     if text and text != "":
         text += "\n\n--------\n\n"
         joke = jokes[random.randint(0, len(jokes) - 1)]
-        text += "^(" + joke + "I'm a bot!) [^(Message me)](http://www.reddit.com/message/compose/?to=" + user + ") ^(if you have any suggestions or bugs to report, and) [^(check me out on Github)](https://github.com/Muddytm/truedota2bot) ^(if you like that sort of thing.)"
+        text += "^(" + joke + "I'm a bot!) [^(Message my author)](http://www.reddit.com/message/compose/?to=" + author + ") ^(if you have any suggestions or bugs to report, and) [^(check me out on Github!)](https://github.com/Muddytm/truedota2bot) ^(if you like that sort of thing.)"
         comment.reply(text)
 
 
@@ -30,17 +31,15 @@ def has_replied(comment):
 
 def check_comment(comment):
     """Recursively check a comment and its replies."""
-    if comment.body.strip().startswith("!test"):
-        if not has_replied(comment):
-            send_reply(td2tasks.test.run(comment.body), comment)
+    text = comment.body
 
-    if "!patchnotes" in comment.body.strip():
+    if "!patchnotes" in text.strip():
         if not has_replied(comment):
-            send_reply(td2tasks.patchnotes.run(comment.body), comment)
+            send_reply(td2tasks.patchnotes.run(text), comment)
 
     if "!teamsummary" in comment.body.strip():
         if not has_replied(comment):
-            send_reply(td2tasks.newteamsummary.run(comment.body), comment)
+            send_reply(td2tasks.newteamsummary.run(text), comment)
 
     for reply in comment.replies:
         try:
@@ -58,6 +57,7 @@ def start():
     config = yaml.safe_load(f)
     f.close()
 
+    author = config["author"]
     user = config["user"]
     password = config["pass"]
     sub = config["sub"]
